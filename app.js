@@ -1,6 +1,6 @@
 const express = require('express')
 //ROUTES PLACEHOLDER
-//const productsRouter = require('./src/routes/products')
+const usersRoute = require('./src/routes/users')
 const cors = require('cors')
 
 const app = express()
@@ -14,6 +14,6 @@ app.use(cors({
 //require('./src/utils/auth')
 
 //using routes
-//app.use('/products', productsRouter)
+app.use('/users', usersRoute)
 
 module.exports = app
