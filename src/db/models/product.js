@@ -17,11 +17,7 @@ const ProductSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  imageData: {
-    allowNull: false,
-    type: DataTypes.BLOB("long"),
-  },
-  imageName: {
+  imageUrl: {
     allowNull: false,
     type: DataTypes.STRING,
   },
