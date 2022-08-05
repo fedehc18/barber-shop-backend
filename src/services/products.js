@@ -1,6 +1,5 @@
 const boom = require("@hapi/boom");
 const { models } = require("../db/sequelize");
-const bcrypt = require("bcrypt");
 
 class ProductsService {
   async createProduct(product) {
