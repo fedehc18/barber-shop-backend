@@ -9,17 +9,13 @@ const ReservationSchema = {
         primaryKey: true,
         type: DataTypes.INTEGER
     },
-    price: {
-        allowNull: false,
-        type: DataTypes.DOUBLE
-    },
     date: {
         allowNull: false,
         type: DataTypes.DATE
     },
     time: {
         allowNull: false,
-        type: DataTypes.TIME
+        type: DataTypes.INTEGER
     },
 }
 

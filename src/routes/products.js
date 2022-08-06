@@ -5,6 +5,7 @@ const { successResponse, errorResponse, streamUpload } = require("../utils");
 const multer = require("multer");
 const fileUpload = multer();
 const dotenv = require("dotenv");
+const verifyToken = require("../middleware/verifyToken");
 
 dotenv.config();
 
@@ -31,7 +32,7 @@ router.post("/", fileUpload.single("image"), async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", verifyToken, async (req, res) => {
   try {
     const productId = req.query.id;
     if (productId) {
