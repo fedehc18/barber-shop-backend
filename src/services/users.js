@@ -8,7 +8,8 @@ class UsersService {
             const hashedPassword = await bcrypt.hash(user.password, 14)
             const userCreated = await models.users.create({
                 ...user,
-                password: hashedPassword
+                password: hashedPassword,
+                Role: "USER"
             })
             return userCreated
         } catch (error) {

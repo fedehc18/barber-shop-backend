@@ -5,13 +5,13 @@ const { successResponse, errorResponse, streamUpload } = require("../utils");
 const multer = require("multer");
 const fileUpload = multer();
 const dotenv = require("dotenv");
-const verifyToken = require("../middleware/verifyToken");
+const verifyTokenAdmin = require("../middleware/verifyTokenAdmin");
 
 dotenv.config();
 
 const productsService = new ProductsService();
 
-router.post("/", fileUpload.single("image"), async (req, res) => {
+router.post("/", verifyTokenAdmin, fileUpload.single("image"), async (req, res) => {
 
   //create image on cloudinary
   result = await streamUpload(req);
@@ -32,7 +32,7 @@ router.post("/", fileUpload.single("image"), async (req, res) => {
   }
 });
 
-router.get("/", verifyToken, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const productId = req.query.id;
     if (productId) {
