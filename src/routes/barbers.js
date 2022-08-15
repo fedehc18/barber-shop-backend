@@ -5,12 +5,13 @@ const { successResponse, errorResponse, streamUpload } = require("../utils");
 const multer = require("multer");
 const fileUpload = multer();
 const dotenv = require("dotenv");
+const verifyTokenAdmin = require("../middleware/verifyTokenAdmin");
 
 dotenv.config();
 
 const barbersService = new BarbersService();
 
-router.post("/", fileUpload.single("image"), async (req, res) => {
+router.post("/", verifyTokenAdmin, fileUpload.single("image"), async (req, res) => {
 
     //create image on cloudinary
     result = await streamUpload(req);

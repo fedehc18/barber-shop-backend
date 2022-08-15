@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const UsersService = require('../services/users')
 const { successResponse, errorResponse, removePassword } = require('../utils');
+const verifyTokenAdmin = require("../middleware/verifyTokenAdmin");
 
 const usersService = new UsersService()
 
@@ -16,7 +17,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.get('/', async (req, res) => {
+router.get('/', verifyTokenAdmin, async (req, res) => {
     try {
         const username = req.query.username
 
