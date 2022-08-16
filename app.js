@@ -5,6 +5,7 @@ const productsRoute = require("./src/routes/products");
 const barbersRoute = require("./src/routes/barbers");
 const authRoute = require("./src/routes/auth")
 const reservationRoute = require("./src/routes/reservations")
+const ordersRoute = require("./src/routes/order")
 const cors = require("cors");
 
 const app = express();
@@ -25,5 +26,6 @@ app.use("/products", productsRoute);
 app.use("/barbers", barbersRoute);
 app.use("/auth", authRoute)
 app.use("/reservation", reservationRoute)
+app.use("/orders", ordersRoute)
 
 module.exports = app;

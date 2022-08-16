@@ -13,10 +13,14 @@ const OrderSchema = {
     allowNull: false,
     type: DataTypes.DOUBLE,
   },
+  shippingDay: {
+    allowNull: false,
+    type: DataTypes.STRING
+  }
 };
 
 class OrderModel extends Model {
-  static associate() {}
+  static associate() { }
 
   static config(sequelize) {
     return {
