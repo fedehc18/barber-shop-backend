@@ -11,14 +11,7 @@ jobs:
             npm install --save
       - run:
           name: Run tests
-          command: npm test 
-      - run:
-          name: Collecting test data
-          command: |
-            npm mkdir -p ~/reports ava --tap | tap-xunit > ~/reports/ava.xml
-          when: always
-      - store_test_results:
-          path: ~/reports
+          command: npm test
 workflows:
   build_tests:
     jobs:
