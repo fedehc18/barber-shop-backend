@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  run_tests:
+    docker:
+     - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Install npm dependencies
+          command: |
+            npm install --save
+      - run:
+          name: Run tests
+          command: npm test 
+      - run:
+          name: Collecting test data
+          command: |
+            npm mkdir -p ~/reports ava --tap | tap-xunit > ~/reports/ava.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+workflows:
+  build_tests:
+    jobs:
+      - run_tests
+        
