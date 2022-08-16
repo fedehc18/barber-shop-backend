@@ -11,11 +11,7 @@ jobs:
             npm install --save
       - run:
           name: Run tests
-          command: npm test c8 ava **/tests/* --verbose 
-      - store_test_results:
-         path: test-results
-      - store_artifacts:
-         path: test-results
+          command: npm test 
 workflows:
   build_tests:
     jobs:
