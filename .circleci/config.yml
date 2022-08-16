@@ -11,7 +11,7 @@ jobs:
             npm install --save
       - run:
           name: Run tests
-          command: ./node_modules/ava/bin/ava test/
+          command: ./node_modules/ava/bin c8 ava **/tests/* --verbose 
       - store_test_results:
          path: test-results
       - store_artifacts:
