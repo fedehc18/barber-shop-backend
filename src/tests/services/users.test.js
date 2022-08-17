@@ -1,5 +1,5 @@
 const test = require("ava");
-const proxyquire = require("proxyquire");
+const proxyquire = require("proxyquire").noCallThru();
 const { modelsData } = require("../../tests_data/db.test");
 
 test.beforeEach(async (t) => {
