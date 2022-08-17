@@ -1,2 +1,2 @@
 # barber-shop-backend
-[![paolagutierz](https://circleci.com/github/paolagutierz/barber-shop-backend.svg?style=svg)](https://app.circleci.com/pipelines/github/paolagutierz/barber-shop-backend/10/workflows/c4bba0fb-54c8-4b47-a601-43f74201e9ac)
+[![paolagutierz](https://circleci.com/github/paolagutierz/barber-shop-backend.svg?style=svg)](https://app.circleci.com/pipelines/github/paolagutierz/barber-shop-backend?branch=feature%2Fconfig-circleci)
